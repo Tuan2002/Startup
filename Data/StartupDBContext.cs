@@ -13,5 +13,6 @@ namespace Startup.Data
         {
         }
         public DbSet<Menu> Menu { get; set; }
+        public DbSet<Post> Post { get; set; }
     }
 }
