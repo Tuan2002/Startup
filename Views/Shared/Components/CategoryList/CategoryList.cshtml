@@ -1,0 +1,9 @@
+@model IList<Category>
+
+<div class="link-animated d-flex flex-column justify-content-start">
+    @foreach (var category in Model.ToList())
+    {
+        <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i
+                class="bi bi-arrow-right me-2"></i>@category.CategoryName</a>
+    }
+</div>

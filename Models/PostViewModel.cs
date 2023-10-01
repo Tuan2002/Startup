@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Startup.Models
 {
-    public class HighlightPostViewModel : Post
+    public class PostViewModel : Post
     {
         public string? CategoryName { get; set; }
 

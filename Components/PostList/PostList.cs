@@ -5,11 +5,11 @@ using Startup.Models;
 
 namespace Startup.Components
 {
-    [ViewComponent(Name = "HighlightPost")]
-    public class HighlightPost : ViewComponent
+    [ViewComponent(Name = "PostList")]
+    public class PostList : ViewComponent
     {
         private readonly StartupDBContext _context;
-        public HighlightPost(StartupDBContext context)
+        public PostList(StartupDBContext context)
         {
             _context = context;
         }
@@ -31,8 +31,8 @@ namespace Startup.Components
                     CategoryName = category.CategoryName,
                     Images = post.Images
                 }
-            ).Take(3).ToListAsync();
-            return await Task.FromResult((IViewComponentResult)View("HighlightPost", posts));
+            ).ToListAsync();
+            return await Task.FromResult((IViewComponentResult)View("PostList", posts));
         }
     }
 }

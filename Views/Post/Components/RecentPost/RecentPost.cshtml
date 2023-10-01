@@ -1,0 +1,12 @@
+@model IList<Post>
+
+@foreach (var post in Model.ToList())
+{
+    var @url = "/post/" + post.PostID;
+    <div class="d-flex rounded overflow-hidden mb-3">
+    <img class="img-fluid" src=@post.Images style="width: 100px; height: 100px; object-fit: cover;" alt=@post.Title>
+    <a href=@url class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">@post.Title
+        </a>
+    </div>
+
+}

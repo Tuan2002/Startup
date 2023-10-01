@@ -18,12 +18,14 @@ For more information on enabling MVC for empty projects, visit https://go.micros
                 @foreach (var menu in Model.Where(menu => menu.Levels == 1).OrderBy(menu =>
                 menu.MenuOrder).ToList())
                 {
+                    var url = "/" + menu.ControllerName;
+                    var isActive = Context.Request.Path.StartsWithSegments(url) ? "active" : "";
                     var ParentID = menu.MenuID;
                     var SubMenu = Model.Where(menu => menu.ParentID == ParentID).OrderBy(menu =>
                     menu.MenuOrder).ToList(); ;
                     @if (SubMenu.Count == 0)
                     {
-                        <a href="#" class="nav-item nav-link">@menu.MenuName</a>
+                        <a href=@url class="nav-item @isActive nav-link">@menu.MenuName</a>
                     }
                     else
                     {
