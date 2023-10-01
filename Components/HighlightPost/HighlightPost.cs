@@ -32,7 +32,7 @@ namespace Startup.Components
                     Images = post.Images
                 }
             ).Take(3).ToListAsync();
-            return await Task.FromResult((IViewComponentResult)View("RecentPost", posts));
+            return await Task.FromResult((IViewComponentResult)View("HighlightPost", posts));
         }
     }
 }
