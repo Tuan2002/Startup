@@ -1,4 +1,8 @@
 @model Post
+
+@{
+    ViewData["Title"] = @Html.DisplayFor(post => post.Title);
+}
 <div class="col-lg-8">
     <!-- Blog Detail Start -->
     <div class="mb-5">
