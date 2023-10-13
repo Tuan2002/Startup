@@ -7,11 +7,10 @@
     <div class="row g-5">
         @try
         {
-            @foreach (var post in Model.OrderBy(post => post.PostOrder).ToList())
+            @foreach (var post in Model.ToList())
             {
                 @if (post is null)
                     break;
-
                 var @url = String.Format("/post/{0}", @post.PostID);
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="blog-item bg-light rounded overflow-hidden">

@@ -9,7 +9,9 @@ builder.Services.AddControllersWithViews();
 ConfigurationManager configuration = builder.Configuration;
 
 // Add services for database
-builder.Services.AddDbContext<StartupDBContext>(options => options.UseSqlServer(configuration.GetConnectionString("Dev")));
+builder.Services.AddDbContext<StartupDBContext>(options =>
+options.UseSqlServer(configuration.GetConnectionString("Dev"))
+);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

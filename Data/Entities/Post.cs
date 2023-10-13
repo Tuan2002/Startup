@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Startup.Data.Entities
 {
@@ -13,15 +9,11 @@ namespace Startup.Data.Entities
         [Key]
         public long PostID { get; set; }
         public string? Title { get; set; }
-        [MaxLength(255)]
         public string? Abstract { get; set; }
         [MaxLength(255)]
         public string? Contents { get; set; }
-        [MaxLength(255)]
         public string? Images { get; set; }
-        [MaxLength(255)]
         public string? Link { get; set; }
-        [MaxLength(255)]
         public string? Author { get; set; }
         [MaxLength(50)]
         public DateTime? CreatedDate { get; set; }

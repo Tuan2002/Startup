@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Startup.Models
 {
-    public class Menu
+    public class MenuViewModel
     {
         public int MenuID { get; set; }
         public string? MenuName { get; set; }

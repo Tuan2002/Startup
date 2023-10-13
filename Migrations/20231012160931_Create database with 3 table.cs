@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Startup.Migrations
 {
-    public partial class Createddatabasse : Migration
+    public partial class Createdatabasewith3table : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,7 +25,7 @@ namespace Startup.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Menu",
+                name: "Menus",
                 columns: table => new
                 {
                     MenuID = table.Column<int>(type: "int", nullable: false)
@@ -42,7 +42,7 @@ namespace Startup.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Menu", x => x.MenuID);
+                    table.PrimaryKey("PK_Menus", x => x.MenuID);
                 });
 
             migrationBuilder.CreateTable(
@@ -52,11 +52,11 @@ namespace Startup.Migrations
                     PostID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Abstract = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Abstract = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Contents = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    Images = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    Link = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    Author = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Images = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Link = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Author = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", maxLength: 50, nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: true),
                     PostOrder = table.Column<int>(type: "int", nullable: true),
@@ -74,9 +74,9 @@ namespace Startup.Migrations
                         principalColumn: "CategoryID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Posts_Menu_MenuID",
+                        name: "FK_Posts_Menus_MenuID",
                         column: x => x.MenuID,
-                        principalTable: "Menu",
+                        principalTable: "Menus",
                         principalColumn: "MenuID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -101,7 +101,7 @@ namespace Startup.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "Menu");
+                name: "Menus");
         }
     }
 }

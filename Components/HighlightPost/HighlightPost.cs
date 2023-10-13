@@ -24,7 +24,6 @@ namespace Startup.Components
                 {
                     PostID = post.PostID,
                     Title = post.Title,
-                    Contents = post.Contents,
                     Abstract = post.Abstract,
                     Author = post.Author,
                     CreatedDate = post.CreatedDate,

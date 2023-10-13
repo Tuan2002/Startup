@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Startup.Data.Entities
 {
-    [Table("Menu")]
+    [Table("Menus")]
     public class Menu
     {
         [Key]

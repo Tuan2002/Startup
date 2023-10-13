@@ -87,7 +87,7 @@ namespace Startup.Migrations
 
                     b.HasKey("MenuID");
 
-                    b.ToTable("Menu");
+                    b.ToTable("Menus");
                 });
 
             modelBuilder.Entity("Startup.Data.Entities.Post", b =>
@@ -99,12 +99,10 @@ namespace Startup.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("PostID"), 1L, 1);
 
                     b.Property<string>("Abstract")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Author")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
@@ -118,15 +116,13 @@ namespace Startup.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Images")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
                     b.Property<string>("Link")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("MenuID")
                         .HasColumnType("int");
